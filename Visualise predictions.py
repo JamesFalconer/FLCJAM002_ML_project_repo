@@ -19,9 +19,9 @@ model = load_model(
     custom_objects=None,
     compile=True
 )
-
-input_test = np.load("C:/users/james/Downloads/MLProj/Data_test_small/x.npy")
-target_test = np.load("C:/users/james/Downloads/MLProj/Data_test_small/y.npy",allow_pickle=True)
+#edit path to where test data is stored
+input_test = np.load("C:/users/Downloads/MLProj/Data_test_small/x.npy")
+target_test = np.load("C:/users/Downloads/MLProj/Data_test_small/y.npy",allow_pickle=True)
 
 target_test = LabelEncoder().fit_transform(target_test[:,0])
 
