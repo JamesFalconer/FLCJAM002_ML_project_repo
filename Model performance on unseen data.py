@@ -17,7 +17,7 @@ small_model1 = load_model(
     custom_objects=None,
     compile=True
 )
-
+#edit path to where test data is stored
 input_test = np.load("C:/users/james/Downloads/MLProj/Data_test_small/x.npy")
 target_test = np.load("C:/users/james/Downloads/MLProj/Data_test_small/y.npy",allow_pickle=True)
 
