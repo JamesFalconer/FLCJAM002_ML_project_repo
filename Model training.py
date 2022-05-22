@@ -25,8 +25,9 @@ verbosity = 1
 num_folds = 10
 
 #load training data
-input_train = np.load("C:/users/james/Downloads/MLProj/Data_spec_aug/x.npy")
-target_train = np.load("C:/users/james/Downloads/MLProj/Data_spec_aug/y.npy",allow_pickle=True)
+#edit path to where test data is stored
+input_train = np.load("C:/users/Downloads/MLProj/Data_spec_aug/x.npy")
+target_train = np.load("C:/users/Downloads/MLProj/Data_spec_aug/y.npy",allow_pickle=True)
 
 input_train, input_test, target_train, target_test = train_test_split(input_train, target_train, test_size=0.2)
 
@@ -97,7 +98,8 @@ for train, test in kfold.split(inputs, targets):
     loss_per_fold.append(scores[0])  
     
     print("Saving model")
-    save_model(model,"C:/users/james/Downloads/MLProj/Models/Model_kfold_spec_big_data"+str(fold_no),save_format='h5')
+    #edit path to where model should be saved, and name of file
+    save_model(model,"C:/users/MLProj/Models/Model_kfold_spec_big_data"+str(fold_no),save_format='h5')
     print("Model saved")
     metric = history.history['accuracy'][-1]
     training_metrics.append(metric*100)
